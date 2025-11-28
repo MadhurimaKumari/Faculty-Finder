@@ -122,6 +122,23 @@ Example contents :
 Flask==3.0.0
 ```
 
+## Sample Data Available for Testing
+
+The application comes preloaded with the following faculty records.  
+Use these values in the search bar to test how the system works:
+
+| ID | Name   | Department | Block | Floor | Cabin No |
+|----|--------|------------|-------|--------|-----------|
+| 1  | Anil   | CSE        | A     | 2      | 101       |
+| 2  | Ram    | AI-ML      | AI    | 2      | 101       |
+| 3  | Sunil  | CSE        | A     | 3      | 112       |
+| 4  | Mohan  | Law        | B     | 1      | 123       |
+| 5  | Sohan  | CSE        | A     | 2      | 103       |
+
+### Example searches:
+- By Name: "Anil", "Ram", "Sunil", "ohan", "an", "il"
+
+
 ## Future Enhancements
 
 - Admin panel
@@ -129,6 +146,6 @@ Flask==3.0.0
 - Autocomplete search
 - Campus map
 - Mobile responsive layout
-- Search with Department name, ID, position
+- Search by Department, ID, position, Floor, Block
 - Filters on Roles, Department, position
 
