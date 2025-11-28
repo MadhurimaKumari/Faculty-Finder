@@ -1,34 +1,24 @@
 import sqlite3
 
-# Create or connect to the database
-conn = sqlite3.connect('faculty.db')
-cursor = conn.cursor()
+conn=sqlite3.connect('faculty.db')
+cursor=conn.cursor()
 
-# Create faculty table
 cursor.execute('''
-    CREATE TABLE IF NOT EXISTS faculty (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        name TEXT NOT NULL,
-        department TEXT NOT NULL,
-        block TEXT NOT NULL,
-        floor TEXT NOT NULL,
-        cabin_no TEXT NOT NULL
-    )
+        CREATE TABLE IF NOT EXISTS faculty(
+            id INTEGER PRIMARY KEY,
+            name TEXT NOT NULL,
+            department TEXT,
+            block TEXT NOT NULL,
+            floor INT NOT NULL,
+            cabin_no INT NOT NULL
+        )
 ''')
 
-# Insert sample data
-sample_data = [
-    ('Dr. John Smith', 'Computer Science', 'A', '2', '201'),
-    ('Prof. Jane Doe', 'Electronics', 'B', '1', '102'),
-    ('Dr. Michael Brown', 'Mechanical', 'C', '3', '305'),
-    ('Prof. Sarah Wilson', 'Civil', 'A', '2', '206'),
-    ('Dr. Robert Taylor', 'Electrical', 'B', '2', '204')
-]
-
-for data in sample_data:
-    cursor.execute('INSERT INTO faculty (name, department, block, floor, cabin_no) VALUES (?, ?, ?, ?, ?)', data)
+cursor.execute("INSERT INTO faculty(id,name,department,block,floor,cabin_no) VALUES (1,'Anil','CSE','A',2,101)")
+cursor.execute("INSERT INTO faculty(id,name,department,block,floor,cabin_no) VALUES (2,'Ram','AI-ML','AI',2,101)")
+cursor.execute("INSERT INTO faculty(id,name,department,block,floor,cabin_no) VALUES (3,'Sunil','CSE','A',3,112)")
+cursor.execute("INSERT INTO faculty(id,name,department,block,floor,cabin_no) VALUES (4,'Mohan','Law','B',1,123)")
+cursor.execute("INSERT INTO faculty(id,name,department,block,floor,cabin_no) VALUES (5,'Sohan','CSE','A',2,103)")
 
 conn.commit()
 conn.close()
-
-print('Database created and populated successfully!')
