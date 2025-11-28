@@ -1,39 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Faculty Locator</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 40px; }
-        h1 { color: #333; }
-        form { margin-top: 20px; }
-        input[type="text"] {
-            padding: 8px;
-            width: 250px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        button {
-            padding: 8px 16px;
-            border: none;
-            border-radius: 4px;
-            background-color: #007bff;
-            color: white;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        }
-    </style>
-</head>
-<body>
-    <h1>Faculty Locator</h1>
-    <p>Search for faculty by name to find their department, block, floor, and cabin number.</p>
-
-    <form action="/search" method="get">
-        <label for="query">Faculty name:</label>
-        <input type="text" id="query" name="q" placeholder="Enter faculty name" required>
+<html>
+    <head>
+        <title>Faculty Finder</title>
+        <style> 
+        body { font-family: Arial; text-align: center; }
+        input, button { margin: 10px; padding: 5px; }
+        </style>
+    </head>
+    <body>
+        <h1> Find Faculty Cabin</h1>
+        <form action="/search" method="get">
+        <input type="text" name="q" placeholder="Enter faculty name" required>
         <button type="submit">Search</button>
     </form>
-</body>
+    </body>
+
 </html>
