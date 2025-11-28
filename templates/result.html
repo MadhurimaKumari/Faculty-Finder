@@ -1,64 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Search Results</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 40px; }
-        h1 { color: #333; }
-        a { color: #007bff; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        .no-results {
-            margin-top: 20px;
-            color: #a00;
-        }
-    </style>
-</head>
+<html>
+<head><title>Search Results</title></head>
 <body>
-    <h1>Search Results</h1>
-    <p>Search query: <strong>{{ query }}</strong></p>
-    <p><a href="/">Back to search</a></p>
-
+    <h1>Search Results for "{{ query }}"</h1>
     {% if faculty %}
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Department</th>
-                <th>Block</th>
-                <th>Floor</th>
-                <th>Cabin No</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for f in faculty %}
-            <tr>
-                <td>{{ f.id }}</td>
-                <td>{{ f.name }}</td>
-                <td>{{ f.department }}</td>
-                <td>{{ f.block }}</td>
-                <td>{{ f.floor }}</td>
-                <td>{{ f.cabin_no }}</td>
-            </tr>
+        <ul>
+            {% for item in faculty %}
+                <li>{{ item['name'] }} ({{ item['department'] }}): Block {{ item['block'] }}, Floor {{ item['floor'] }}, Cabin {{ item['cabin_no'] }}</li>
             {% endfor %}
-        </tbody>
-    </table>
+        </ul>
     {% else %}
-    <p class="no-results">No faculty found for this name.</p>
+        <p>No faculty found.</p>
     {% endif %}
+    <a href="/">Search Again</a>
 </body>
 </html>
