@@ -116,14 +116,19 @@ Run this file once before using the app.
 
 ## requirements.txt
 
-Example contents (you can adjust versions as needed):
+Example contents :
 
 ```
 Flask==3.0.0
 ```
 
-If you use additional libraries later, add them here.
+## Future Enhancements
 
-## License
+- Admin panel
+- Bootstrap UI
+- Autocomplete search
+- Campus map
+- Mobile responsive layout
+- Search with Department name, ID, position
+- Filters on Roles, Department, position
 
-Add a license here if you want (for example, MIT, Apache 2.0, etc.).
